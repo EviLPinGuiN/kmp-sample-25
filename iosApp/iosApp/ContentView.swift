@@ -1,5 +1,5 @@
 import SwiftUI
-import shared
+import CommonKmp
 
 struct ContentView: View {
 	let greet = Greeting().greet()
