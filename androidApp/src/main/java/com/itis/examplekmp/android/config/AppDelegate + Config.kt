@@ -5,8 +5,8 @@ import android.os.Build
 import com.itis.examplekmp.CommonKmp
 import com.itis.examplekmp.android.AppDelegate
 import com.itis.examplekmp.android.BuildConfig
-import com.itis.examplekmp.config.Configuration
-import com.itis.examplekmp.config.PlatformConfiguration
+import com.itis.examplekmp.core.config.Configuration
+import com.itis.examplekmp.core.config.PlatformConfiguration
 import org.koin.android.ext.koin.androidContext
 
 internal fun AppDelegate.initCommon() {
@@ -21,13 +21,15 @@ internal fun AppDelegate.initCommon() {
         isDebug = BuildConfig.DEBUG,
         isHttpLoggingEnabled = BuildConfig.DEBUG,
     )
-    CommonKmp.initKoin(config)
+    // use with storageModule
+//    CommonKmp.initKoin(config)
 
     // ----------- or -----------
 
-//    CommonKmp.initKoin(config) {
-//        androidContext(applicationContext)
-//    }
+    // use with platformModule
+    CommonKmp.initKoin(config) {
+        androidContext(applicationContext)
+    }
 }
 
 private val Resources.deviceType: Configuration.DeviceType

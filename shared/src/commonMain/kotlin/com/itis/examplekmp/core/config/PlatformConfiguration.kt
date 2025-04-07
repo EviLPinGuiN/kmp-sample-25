@@ -1,4 +1,4 @@
-package com.itis.examplekmp.config
+package com.itis.examplekmp.core.config
 
 expect class PlatformConfiguration {
     val appVersionName: String

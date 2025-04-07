@@ -1,4 +1,4 @@
-package com.itis.examplekmp.network
+package com.itis.examplekmp.core.network
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngineConfig
