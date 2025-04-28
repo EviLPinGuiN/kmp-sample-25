@@ -1,4 +1,4 @@
-package com.itis.examplekmp.feature.weather.data
+package com.itis.examplekmp.feature.weather.data.datasource
 
 import com.itis.examplekmp.Database
 import com.itis.examplekmp.WeatherDB
@@ -18,7 +18,7 @@ data class TestPerson(
     val name: String,
 )
 
-class PersistentWeatherDataSource(
+internal class PersistentWeatherDataSource(
     private val database: Database,
     private val settings: Settings,
     private val json: Json,

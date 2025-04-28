@@ -4,7 +4,7 @@ import com.itis.examplekmp.core.config.Configuration
 import com.itis.examplekmp.core.config.PlatformConfiguration
 import com.itis.examplekmp.core.network.networkModule
 import com.itis.examplekmp.core.qualifier.qualifierModule
-import com.itis.examplekmp.feature.weather.data.PersistentWeatherDataSource
+import com.itis.examplekmp.feature.featureModule
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module
@@ -25,6 +25,8 @@ object CommonKmp {
                 // 2 варианта
 //                storageModule,
                 platformModule(),
+
+                featureModule,
             )
         }
     }
@@ -35,10 +37,6 @@ object CommonKmp {
 
         single<Database> {
             Database(get())
-        }
-
-        factory {
-            PersistentWeatherDataSource(get(), get())
         }
     }
 }
